@@ -1,0 +1,16 @@
+CXX_STD = CXX14
+
+PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS)
+PKG_LIBS = $(SHLIB_OPENMP_CXXFLAGS) $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
+
+.PHONY: all tmblib
+
+all: clean $(SHLIB)
+$(SHLIB): tmblib
+
+tmblib:
+	(cd TMB; $(R_HOME)/bin$(R_ARCH_BIN)/Rscript \
+	--no-save --no-restore compile.R '$(TMB_FLAGS)')
+
+clean:
+	rm -rf *.so *.o TMB/*.so TMB/*.o

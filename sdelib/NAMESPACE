@@ -1,0 +1,4 @@
+useDynLib(sdelib, .registration=TRUE)
+useDynLib(sdelib_TMBExports)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")
