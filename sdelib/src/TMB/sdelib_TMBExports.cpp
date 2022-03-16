@@ -3,6 +3,7 @@
 #define TMB_LIB_INIT R_init_sdelib_TMBExports
 #include <TMB.hpp>
 #include "ou.hpp"
+#include "hooke.hpp"
 
 template<class Type>
 Type objective_function<Type>::operator() () {
@@ -13,8 +14,11 @@ Type objective_function<Type>::operator() () {
   if(tmb_model == "ou") {
     return ou(this);
   }
+  else if(tmb_model == "hooke"){
+    return(hooke(this));
+  }
   else {
-    error("Unknown model (not in switch).");
+    error("Unknown model.");
   }
   return 0;
 }
