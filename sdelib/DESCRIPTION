@@ -1,0 +1,19 @@
+Package: sdelib
+Type: Package
+Title: Stochastic Differential Equation Modeling 
+Version: 1.0
+Date: 2022-02-23
+Author: Gregory Bopp
+Maintainer: Who to complain to <yourfault@somewhere.net>
+Description: This package uses the Template Model Builder (TMB) package to 
+    do inference on stochastic differential equation models.
+License: GPL-2
+Imports: cowplot,
+	 ggplot2,
+	 purrr,
+	 Rcpp,
+	 TMB
+LinkingTo: Rcpp, 
+ 	         RcppArmadillo, 
+  	       TMB
+RoxygenNote: 7.1.2
